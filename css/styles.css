@@ -9,3 +9,15 @@
 #clock {
   margin-top: 21vh;
 }
+
+#alarm-container {
+  height: 50vh;
+}
+
+#alarm {
+  display: none;
+  font-size: 7em;
+  text-align: center;
+  margin-top: 21vh;
+  font-weight: 600;
+}
