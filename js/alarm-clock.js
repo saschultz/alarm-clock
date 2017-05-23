@@ -1,7 +1,7 @@
 function Clock(){}
 
-Clock.prototype.getTime = function(){
-  console.log("it's time");
+Clock.prototype.start = function(updateClock){
+  window.setInterval(updateClock, 1000);
 }
 
 exports.clockModule = Clock;
