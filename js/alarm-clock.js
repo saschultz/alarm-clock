@@ -2,19 +2,20 @@ function Clock(){
   this.alarms = [];
 }
 
-Clock.prototype.start = function(updateClock, showAlert) {
-  window.setInterval(this.update, 1000, updateClock, this.anyAlarms, this.alarms, showAlert);
+Clock.prototype.start = function(displays) {
+  window.setInterval(this.update, 1000, displays, this);
 }
 
-Clock.prototype.update = function(updateClock, anyAlarms, alarms, showAlert) {
-  updateClock();
-  if(anyAlarms(alarms)) {
-    showAlert();
+Clock.prototype.update = function(displays, context) {
+  displays.update();
+  if(context.checkForAlarm()) {
+    displays.show();
+    window.setTimeout(displays.hide, 10000);
   }
 }
 
-Clock.prototype.anyAlarms = function(alarms){
-  return alarms.includes(moment().format('LTS'));
+Clock.prototype.checkForAlarm = function(){
+  return this.alarms.includes(moment().format('LTS'));
 }
 
 Clock.prototype.addAlarm = function(userAlarm) {

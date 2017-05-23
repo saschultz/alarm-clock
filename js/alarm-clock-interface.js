@@ -12,10 +12,14 @@ var showAlert = function(){
   $('#alarm').show();
 }
 
+var hideAlert = function() {
+  $('#alarm').hide();
+}
+
 $(document).ready(function(){
   $("#clock").append(`<h2>${moment().format("LTS")}</h2>`)
   var clock = new Clock();
-  clock.start(updateClock, showAlert);
+  clock.start({update: updateClock, show: showAlert, hide: hideAlert});
 
   $('#alarm-input').submit(function(event) {
     event.preventDefault();
