@@ -20,4 +20,43 @@
   text-align: center;
   margin-top: 21vh;
   font-weight: 600;
+
+}
+
+#form-container {
+  height: 50vh;
+  background-color: #73d8dd;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+#alarm-input {
+  margin-top: 21vh;
+}
+
+#alarm-input label {
+  letter-spacing: 2px;
+}
+#alarm-input button {
+  background-color: inherit;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+}
+#alarm-input button:hover {
+  text-decoration: underline;
+}
+
+#time {
+  background-color: #f2f09b;
+  border: none;
+  width: 137px;
+  font-weight: 500;
+}
+
+#time:focus {
+  outline: none;
 }
